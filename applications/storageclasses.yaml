@@ -1,8 +1,8 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
-data:
-  timeout.reconciliation: "30s"      # To change the auto-sync check interval in ArgoCD, we can configure our custom time
-  
+# data:
+#   timeout.reconciliation: "30s"      # To change the auto-sync check interval in ArgoCD, we can configure our custom time
+
 metadata:
   name: namespaces
   namespace: argocd
