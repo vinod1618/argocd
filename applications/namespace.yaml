@@ -15,5 +15,5 @@ spec:
 
   syncPolicy:
     automated:
-      prune: true # if deleted in git, delete in git also
+      prune: true # if deleted in git, delete in k8s also
       selfHeal: true # if someone manually change through CLI, do the self heal.
