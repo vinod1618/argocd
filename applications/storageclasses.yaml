@@ -18,5 +18,5 @@ spec:
       prune: true # if deleted in git, delete in k8s also
       selfHeal: true # if someone manually change through CLI, do the self heal.
 
-data:
-  timeout.reconciliation: "30s"      # To change the auto-sync check interval in ArgoCD, we can configure our custom time
+# data:
+#   timeout.reconciliation: "30s"      # To change the auto-sync check interval in ArgoCD, we can configure our custom time
