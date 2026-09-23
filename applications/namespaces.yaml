@@ -1,14 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
+# data:
+#   timeout.reconciliation: "30s"      # To change the auto-sync check interval in ArgoCD, we can configure our custom time
+
 metadata:
-  name: storageclasses
+  name: namespaces
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/vinod1618/argocd.git
     targetRevision: main
-    path: storage-classes
+    path: namespaces
   destination:
     server: https://kubernetes.default.svc  # current eks cluster
     namespace: argocd
@@ -17,6 +20,3 @@ spec:
     automated:
       prune: true # if deleted in git, delete in k8s also
       selfHeal: true # if someone manually change through CLI, do the self heal.
-
-data:
-  timeout.reconciliation: "30s"      # To change the auto-sync check interval in ArgoCD, we can configure our custom time
